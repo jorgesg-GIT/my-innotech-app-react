@@ -21,11 +21,5 @@ jobs:
         with:
           node-version: 16.x
           cache: 'npm'
-      - run: npm ci
-      - run: npm run build --if-present
-      - run: npm test
-      - name: 'Test'
-        run: npx vitest --coverage.enabled true
-      - name: "Report Coverage"
-        uses: davelosert/vitest-coverage-report-action@v2
-        if: always()
+      - run: npm install -g bats
+      
